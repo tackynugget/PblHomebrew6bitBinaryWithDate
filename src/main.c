@@ -1,3 +1,9 @@
+// This is my first working modification of MyNameIsKir's Binary Watch watchface for the Pebble Smart Watch
+// (https://github.com/MyNameIsKir/Pebble-Binary-Watch-C). Most of the code is hers; I just fumbled around with
+// some modifications--namely, I changed it from an 8-bit-per-line display to a 6-bit used a different, larger
+// font added the old-school green-on-black "homebrew" color scheme and removed the date window.
+// Many thanks to MyNameIsKir for her help and her work.
+
 #include <pebble.h>
 #include <stdio.h>
 
@@ -59,7 +65,7 @@ static void main_window_load(Window *window) {
   text_layer = text_layer_create(GRect(0, -43, 144, 200));
   text_layer_set_background_color(text_layer, GColorBlack);
   text_layer_set_text_color(text_layer, GColorGreen);
-  text_layer_set_text(text_layer, "0DATE0\n0HOUR0\n0MINS0\n0SECS0");
+  text_layer_set_text(text_layer, "000000\n000000\n000000\n000000\n000000");
   text_layer_set_font(text_layer, fonts_load_custom_font(resource_get_handle(RESOURCE_ID_Share_Tech_Mono_40)));
   text_layer_set_text_alignment(text_layer, GTextAlignmentCenter);
 
